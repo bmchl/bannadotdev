@@ -1,0 +1,50 @@
+---
+export interface Props {
+  githubLink?: string;
+  accessLink?: string;
+  projectName: string;
+  projectDescription: string;
+  date: string;
+  languages: string[];
+  image: string;
+}
+
+const { githubLink, accessLink, projectName, projectDescription, date, languages } =
+  Astro.props;
+---
+
+<article class="bg-primary-light bg-opacity-50 rounded-lg shadow-md p-6 m-6 mr-20 ml-20 text-primary-dark">
+  <div class="flex flex-row w-full justify-between">
+  <h2 class="text-xl font-bold mb-2 ">{projectName}</h2>
+  <p class=" text-s">{date}</p>
+  </div>
+    <div class="flex flex-row w-full justify-between">
+<div class="flex flex-col">
+  <p class="text-sm mb-4">{projectDescription}</p>
+  <div class="flex flex-wrap">
+    {
+      languages.map((language) => (
+        <span class="bg-primary-dark text-white rounded-full text-xs px-2 py-1 mr-2 mb-2">
+          {language}
+        </span>
+      ))
+    }
+  </div>
+  </div>
+  <div class="flex flex-col">
+  { accessLink && (
+    <div class="flex items-center mb-2  text-primary-dark">
+      <i class="fas fa-external-link-alt mr-2"></i>
+      <a class="hover:underline" href="{ accessLink }">Visit</a>
+    </div>
+  )}
+  {githubLink && (
+  <div class="flex items-center  text-primary-dark">
+    <i class="fab fa-github mr-2"></i>
+    <a class="hover:underline" href="{ githubLink }">GitHub</a>
+  </div>
+  )}
+  </div>
+  </div>
+
+</article>

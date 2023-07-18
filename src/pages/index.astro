@@ -1,81 +1,97 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import About from '../components/About.astro';
+import Experiences from '../sections/Experience.astro';
+import Projects from '../sections/Projects.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="meet michael banna">
+  <canvas
+    class="absolute inset-0 w-full h-full"
+    id="gradient-canvas"
+    data-transition-in></canvas>
+    <section id="about" class="mb-16"></section>
+  <main
+    class="bg-backdrop opacity-80 rounded-xl shadow-2xl m-auto mt-10 mb-0 p-20 w-2/3"
+  >
+    <section>
+  <h2 class="text-3xl mt-2 mb-2 font-bold text-primary flex items-center"><span class="flex-grow border-b-2 border-primary-light ml-4"></span><i class="fa fa-person"></i>
+    about
+  </h2>
+  <About />
+</section>
+    <section id="experience" class="h-full mb-0 transition-all duration-300 pt-28">
+  <h2 class="text-3xl mt-2 mb-2 font-bold text-primary flex items-center"><span class="flex-grow border-b-2 border-primary-light ml-4"></span>
+    experience
+  </h2>
+  <Experiences />
+</section>
+ <section id="projects" class="h-full pt-28">
+  <h2 class="text-3xl mt-2 mb-2 font-bold text-primary flex items-center"><span class="flex-grow border-b-2 border-primary-light ml-4"></span>
+    projects
+  </h2>
+  <Projects />
+</section>
+  </main>
+  <footer class="flex justify-center items-center px-auto mx-auto text-xl text-writing-light opacity-70 py-12">
+    designed and built by michael banna. ©
+    july 2023
+  </footer>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  main {
+    margin: auto;
+    padding: 1.5rem;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  #gradient-canvas {
+    /* width: 100vw;
+    height: 100vh; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    --gradient-color-1: #f4e7d4;
+    --gradient-color-2: #f1dac4;
+    --gradient-color-3: #a69cac;
+    --gradient-color-4: #474973;
+  }
 </style>
+<script>
+  import { Gradient } from '../tools/gradient.js';
+  const gradient = new Gradient();
+  gradient.el = document.getElementById('gradient-canvas');
+  gradient.connect();
+</script>

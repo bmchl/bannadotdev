@@ -1,0 +1,32 @@
+---
+const resume = '/public/resume.pdf';
+// const updated = '07/23';
+---
+
+<div
+  class="  hover:text-writing-dark transition-all text-primary-light flex flex-row items-center">
+  <!-- // <i class="fas fa-file pr-4 ml-2 text-2xl"></i> -->
+  <div class="flex flex-col">
+    <a
+      href="{ resume }"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fas fa-file pr-4 ml-2 text-2xl"
+      data-tooltip-target="tooltip-default"
+    >
+      </a
+    >
+    <!-- <p class="opacity-80">
+      <span class="italic"></span>
+      {updated}
+    </p> -->
+  </div>
+</div>
+
+
+<!-- <button data-tooltip-target="tooltip-default" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Default tooltip</button> -->
+<div id="tooltip-default" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-writing-dark ransition-opacity duration-300 bg-primary rounded-lg shadow-sm opacity-0 tooltip">
+    download my resume
+    <div class="tooltip-arrow" data-popper-arrow></div>
+</div>
+

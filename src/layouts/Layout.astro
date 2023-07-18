@@ -1,36 +1,110 @@
 ---
+import Header from '../components/Header.astro';
+import Resume from '../components/Resume.astro';
+import Socials from '../components/Socials.astro';
+import Hero from '../sections/Hero.astro';
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="en" class="bg-writing-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script
+      src="https://kit.fontawesome.com/335df166b2.js"
+      crossorigin="anonymous"></script>
+      <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Hero />
+    <Header />
+    <!-- <div class="fixed bottom-0 w-full flex justify-between">
+      <div class="bg-primary-dark bg-opacity-80 text-4xl m-5 rounded-lg shadow-md p-2 hover:shadow-lg transition-all text-primary-light flex flex-row items-center">
+        <Resume />
+        <Socials />
+      </div> -->
+    </div>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Regular.woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Bold.woff2');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Book.woff2');
+    font-weight: 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Italic.woff2');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Medium.woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Thin.woff2');
+    font-weight: 100;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-ThinItalic.woff2');
+    font-weight: 100;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-BoldItalic.woff2');
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #da62c4 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: #f6f6f6;
+    scroll-behavior: smooth;
+  }
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+  .mtl {
+    font-family: 'Neue Montreal';
+  }
 </style>
