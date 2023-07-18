@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import About from '../components/About.astro';
-import Experiences from '../sections/Experience.astro';
+import Experience from '../sections/Experience.astro';
 import Projects from '../sections/Projects.astro';
 ---
 
@@ -25,7 +25,7 @@ import Projects from '../sections/Projects.astro';
   <h2 class="text-3xl mt-2 mb-2 font-bold text-primary flex items-center"><span class="flex-grow border-b-2 border-primary-light ml-4"></span>
     experience
   </h2>
-  <Experiences />
+  <Experience client:load/>
 </section>
  <section id="projects" class="h-full pt-28">
   <h2 class="text-3xl mt-2 mb-2 font-bold text-primary flex items-center"><span class="flex-grow border-b-2 border-primary-light ml-4"></span>
