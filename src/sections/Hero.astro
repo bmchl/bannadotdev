@@ -12,26 +12,7 @@
     <i class="pr-3 no-underline fa fa-arrow-down animate-bounce"></i> let's meet
   </a>
 </div>
-
-
-<style>
-    #gradient-canvas {
-    z-index: -1;
-    --gradient-color-1: #f4e7d4;
-    --gradient-color-2: #f1dac4;
-    --gradient-color-3: #a69cac;
-    --gradient-color-4: #474973;
-  }
-  .content{
-    min-height: 100vh;
-  }
-  
-</style>
 <script>
-  import { Gradient } from '../tools/gradient.js';
-  const gradient = new Gradient();
-  gradient.el = document.getElementById('gradient-canvas');
-  gradient.connect();
   window.addEventListener('load', function() {
     setTimeout(() =>{
       const h1 = document.getElementById('part-1');
