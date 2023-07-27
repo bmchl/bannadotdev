@@ -17,6 +17,7 @@
     "@types/react-dom": "^18.2.7",
     "astro": "^2.8.1",
     "flowbite": "^1.7.0",
+    "framer": "^2.3.0",
     "prettier": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
