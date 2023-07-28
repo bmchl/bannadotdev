@@ -39,13 +39,13 @@ const { githubLink, accessLink, projectName, projectDescription, date, languages
       { accessLink && (
         <div class="flex items-center  content-end justify-end mb-2  text-primary-dark text-right">
           <i class="fas fa-external-link-alt mr-2"></i>
-          <a class="hover:underline" href="{ accessLink }">Visit</a>
+          <a class="hover:underline" href={ accessLink }>Visit</a>
         </div>
       )}
       {githubLink && (
       <div class="flex items-center content-end justify-end text-primary-dark text-right">
         <i class="fab fa-github mr-2"></i>
-        <a class="hover:underline" href="{ githubLink }">GitHub</a>
+        <a class="hover:underline" href={ githubLink }>GitHub</a>
       </div>
       )}
       </div>
