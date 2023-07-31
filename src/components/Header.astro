@@ -1,15 +1,17 @@
 ---
-import Socials from '../components/Socials.astro'
+import Socials from './Socials.astro';
+
 ---
-<div class="w-full flex flex-row h">
-  <div
-    class="bg-primary-dark text-primary-light p-4 fixed top-0 z-50 ml-5 mt-5 rounded-lg shadow-lg opacity-100 h-20 text-xl w-2/5"
+<div class="flex flex-row justify-center content-center mx-5 fixed top-5 z-50">
+  <span
+    class="bg-primary-dark text-primary-light p-4 rounded-lg shadow-lg opacity-100 h-20 text-xl inline-block w-full"
   >
-    <nav class="flex items-center justify-between  content-center h-full mr-2 ml-2">
+    <nav class="flex items-center justify-between content-center mr-2 ml-2 h-full">
       <a
         class="text-2xl font-bold font-mono hover:text-writing-dark transition-all"
         href="/">michael banna</a
       >
+      <div class="w-24"></div>
       <ul class="flex space-x-4">
         <li>
           <a class="hover:text-writing-dark transition-all" href="/#about"
@@ -28,10 +30,25 @@ import Socials from '../components/Socials.astro'
         </li>
       </ul>
     </nav>
-  </div>
+  </span>
   <div
-    class="bg-primary-dark text-primary-light p-4 fixed top-0 right-0 z-50 mr-5 mt-5 rounded-lg shadow-lg opacity-100 flex flex-row justify-between h-20 w-fit"
+  class=" bg-primary-dark text-primary-light p-4 fixed top-0 right-0 z-50 mr-5 mt-5 rounded-lg shadow-lg opacity-100 flex flex-row justify-between h-20 w-fit"
   >
-    <Socials />
+    <Socials/>
+  </div>
 </div>
+
 </div>
+
+<script>
+  function toggle() {
+    console.log('heyyyyy');
+    // const nav = document.getElementById('jsp');
+    // nav?.classList.add('menu-open')
+  }
+</script>
+<style>
+  .menu-open{
+
+  }
+</style>

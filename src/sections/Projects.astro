@@ -2,11 +2,6 @@
 import Project from '../components/Project.astro';
 import Layout from '../layouts/Layout.astro';
 
-export let metadata = {
-  title: 'Projects',
-  description: 'A list of projects I have worked on.',
-};
-
 export let data = {
   projects: [
     {
@@ -41,27 +36,22 @@ export let data = {
       languages: ['Astro', 'TypeScript', 'TailwindCSS'],
       image: '/media/bannadotdev.png',
     },
+    {
+      behanceLink: 'https://www.behance.net/gallery/161561107/Course-Creation-Platform-UI',
+      projectName: 'Course Creation UI Redesign',
+      projectDescription: 'A comprehensive UI/UX case study for a university course creation form',
+      date: 'December 2022',
+      languages: ['Figma'],
+      image: '/media/coursecreation.png',
+    },
   ],
 };
 
 const { projects } = data;
 ---
-
-
-  <!-- <ol class="list-none flex-auto mx-auto">
-    {
-      projects.map((project) => (
-        <li>
-          <Project {...project} />
-        </li>
-      ))
-    }
-  </ol> -->
-
-
-<div id="default-carousel" class="relative w-full h-80 transition-all mt-8" data-carousel="slide">
+<div id="default-carousel" class="relative w-full h-96 md:h-80 transition-all mt-8" data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="relative h-80 overflow-hidden rounded-lg md:h-80">
+    <div class="relative h-96 overflow-hidden rounded-lg md:h-80">
       {
       projects.map((project) => (
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
