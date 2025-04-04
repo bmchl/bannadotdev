@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import About from '../sections/About.astro';
-import Experience from '../sections/Experience.astro';
-import Projects from '../sections/Projects.astro';
 ---
 
 <Layout title="meet michael banna">
@@ -10,32 +8,20 @@ import Projects from '../sections/Projects.astro';
     class="absolute inset-0 w-full h-full"
     id="gradient-canvas"
     data-transition-in></canvas>
-    <section id="about" class="mb-16"></section>
   <main
-    class="bg-backdrop opacity-80 rounded-xl shadow-2xl m-auto mt-10 mb-0 p-8 md:p-16 lg:p-20 w-full md:w-3/4 lg:w-2/3"
+    class="bg-backdrop opacity-80 rounded-xl shadow-2xl m-auto mt-10 mb-0 p-8 md:p-16 lg:p-20 w-full md:w-3/4 lg:w-2/3 neue-montreal"
   >
     <section>
-  <a href="/#about"><h2 class="text-3xl mt-2 mb-2 font-bold font-mono text-primary flex items-center hover:underline hover:underline-offset-8"><span class="flex-grow border-b-2 border-primary-light ml-4"></span>
+  <h2 class="text-3xl mt-2 mb-2 font-bold text-primary flex items-center" style="font-family: 'Neue Montreal', monospace;"><span class="flex-grow border-b-2 border-primary-light ml-4"></span>
 who?
-  </h2></a>
+  </h2>
   <About />
 </section>
-    <!-- <section class="h-full mb-0 transition-all duration-300 pt-10">
-<a href="/#experience"><h2 class="text-3xl mt-2 mb-2 font-bold font-mono text-primary flex items-center hover:underline hover:underline-offset-8"><span class="flex-grow border-b-2 border-primary-light ml-4"></span>
-      experience
-  </h2></a>
-  <Experience/>
-</section>
- <section  class="h-full pt-10">
-  <a href="/#projects"><h2 class="text-3xl mt-2 mb-2 font-bold font-mono text-primary flex items-center hover:underline hover:underline-offset-8"><span class="flex-grow border-b-2 border-primary-light ml-4"></span>
-projects
-  </h2></a>
-  <Projects />
-</section> -->
   </main>
-  <footer class="flex font-mono justify-center items-center px-auto md:mx-auto mx-4 text-xl text-writing-light opacity-70 py-12 text-center">
-    designed by michael banna. ©
-    october 2024
+  <footer class="flex flex-col justify-center items-center px-auto md:mx-auto mx-4 text-writing-light opacity-70 py-12 text-center" style="font-family: 'Neue Montreal', monospace;">
+    <div class="mb-1">designed by <span class="font-bold text-primary">michael banna</span>. ©
+    april 2024</div>
+    <div class="text-sm opacity-60">set in pp neue montreal by <a href="https://pangrampangram.com" target="_blank" rel="noopener noreferrer" class="hover:underline">pangram pangram</a></div>
   </footer>
   <div class="visible md:invisible h-24"></div>
 </Layout>
@@ -77,8 +63,6 @@ projects
     color: rgb(var(--accent));
   }
   #gradient-canvas {
-    /* width: 100vw;
-    height: 100vh; */
     position: fixed;
     top: 0;
     left: 0;

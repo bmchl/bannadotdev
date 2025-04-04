@@ -1,19 +1,18 @@
 ---
 import Socials from './Socials.astro';
 ---
-<div class="flex flex-row justify-center content-center mx-5 fixed top-5 z-50">
-  <span
-    class="bg-primary-dark text-primary-light p-4 rounded-lg shadow-lg opacity-100 h-20 text-xl flex flex-row justify-between w-full"
-  >
-    <nav class="flex items-center justify-between content-center mr-2 ml-2 h-full">
-      <a
-        class="text-2xl font-bold font-mono hover:text-writing-dark transition-all"
-        href="/">michael banna</a
-      >
-      <div class="w-24"></div>
-    </nav>
-    <div class="flex items-center content-center mr-2">
-    <Socials></Socials>
+<div class="fixed top-5 left-0 right-0 z-50 px-5">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="bg-primary-dark text-primary-light p-4 rounded-lg shadow-lg opacity-100 h-20 text-xl flex justify-between w-full">
+      <nav class="flex items-center h-full">
+        <a
+          class="text-2xl font-bold font-mono hover:text-writing-dark transition-all"
+          href="/">michael banna</a
+        >
+      </nav>
+      <div class="flex items-center">
+        <Socials/>
+      </div>
     </div>
-</span>
+  </div>
 </div>

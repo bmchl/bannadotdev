@@ -2,38 +2,19 @@
 import Socials from './Socials.astro';
 
 ---
-<div class="flex flex-row justify-center content-center mx-5 fixed top-5 z-50 backdrop-filter backdrop-blur-lg backdrop-opacity-50">
-  <span
-    class="bg-primary-dark text-primary-light p-4 rounded-lg shadow-lg opacity-100 h-20 text-xl inline-block w-full"
-  >
-    <nav class="flex items-center justify-between content-center mr-2 ml-2 h-full">
-      <a
-        class="text-2xl font-bold font-mono hover:text-writing-dark transition-all"
-        href="/">michael banna</a
-      >
-      <div class="w-24"></div>
-      <ul class="flex space-x-4">
-        <li>
-          <a class="hover:text-writing-dark transition-all" href="/#about"
-            >about</a
-          >
-        </li>
-        <li>
-          <a class="hover:text-writing-dark transition-all" href="/#experience"
-          >experience</a
-          >
-        </li>
-        <li>
-          <a class="hover:text-writing-dark transition-all" href="/#projects"
-            >projects</a
-          >
-        </li>
-      </ul>
-    </nav>
-  </span>
-  <div
-  class=" bg-primary-dark text-primary-light p-4 fixed top-0 right-0 z-50 mr-5 mt-5 rounded-lg shadow-lg opacity-100 flex flex-row justify-between h-20 w-fit"
-  >
-    <Socials/>
+<div class="fixed top-5 left-0 right-0 z-50 px-5 backdrop-filter backdrop-blur-lg backdrop-opacity-50">
+  <div class="flex justify-between max-w-screen-xl mx-auto">
+    <div class="bg-primary-dark text-primary-light p-4 rounded-lg shadow-lg opacity-100 h-20 text-xl w-auto flex-grow">
+      <nav class="flex items-center justify-between h-full">
+        <a
+          class="text-2xl font-bold hover:text-writing-dark transition-all"
+          style="font-family: 'Neue Montreal', monospace;"
+          href="/">michael banna</a
+        >
+      </nav>
+    </div>
+    <div class="bg-primary-dark text-primary-light p-4 rounded-lg shadow-lg opacity-100 h-20 w-fit ml-4 flex items-center">
+      <Socials/>
+    </div>
   </div>
 </div>

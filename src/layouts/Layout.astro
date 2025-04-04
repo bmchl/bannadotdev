@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import MobileHeader from '../components/MobileHeader.astro';
 import CompactHeader from '../components/CompactHeader.astro';
 import Hero from '../sections/Hero.astro';
+import '../fonts.css';
 export interface Props {
   title: string;
 }
@@ -24,7 +25,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="w-full">
+  <body class="w-full neue-montreal">
     <Hero />
     <div class="invisible lg:visible">
       <Header />
@@ -38,54 +39,63 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
+
 <style is:global>
   @font-face {
     font-family: 'Neue Montreal';
-    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Regular.woff2');
+    src: url('/fonts/neue-montreal/PPNeueMontreal-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Neue Montreal';
-    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Bold.woff2');
+    src: url('/fonts/neue-montreal/PPNeueMontreal-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Neue Montreal';
-    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Book.woff2');
+    src: url('/fonts/neue-montreal/PPNeueMontreal-Book.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Neue Montreal';
-    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Italic.woff2');
+    src: url('/fonts/neue-montreal/PPNeueMontreal-Italic.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Neue Montreal';
-    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Medium.woff2');
+    src: url('/fonts/neue-montreal/PPNeueMontreal-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Neue Montreal';
-    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-Thin.woff2');
+    src: url('/fonts/neue-montreal/PPNeueMontreal-Thin.woff2') format('woff2');
     font-weight: 100;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Neue Montreal';
-    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-ThinItalic.woff2');
+    src: url('/fonts/neue-montreal/PPNeueMontreal-ThinItalic.woff2') format('woff2');
     font-weight: 100;
     font-style: italic;
+    font-display: swap;
   }
   @font-face {
     font-family: 'Neue Montreal';
-    src: url('../../public/fonts/neue-montreal/PPNeueMontreal-BoldItalic.woff2');
+    src: url('/fonts/neue-montreal/PPNeueMontreal-BoldItalic.woff2') format('woff2');
     font-weight: bold;
     font-style: italic;
+    font-display: swap;
   }
 
   :root {
@@ -98,15 +108,18 @@ const { title } = Astro.props;
     );
   }
   html {
-    font-family: system-ui, sans-serif;
+    font-family: 'Neue Montreal', system-ui, sans-serif;
     background-color: #f6f6f6;
     scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Neue Montreal', system-ui, sans-serif;
   }
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
-  .mtl {
-    font-family: 'Neue Montreal';
+  .neue-montreal {
+    font-family: 'Neue Montreal', system-ui, sans-serif;
   }
 </style>

@@ -2,15 +2,15 @@
 
 ---
 <div class="flex flex-col items-center justify-center h-screen text-primary-dark w-full content-center">
-  <h1 id="hero-title" class="font-mono bg-transparent relative text-4xl md:text-7xl z-10 m-auto mb-0 leading-tight">
-    <span id="part-1" class="opacity-0 transition-all duration-1000 font-bold italic">welcome,</span><br>
-    <span id="part-2" class="opacity-0 transition-all duration-1000 font-bold">
-      it's <span class="font-black">michael</span>.
+  <h1 id="hero-title" class="relative text-4xl md:text-7xl z-10 m-auto mb-0 leading-tight font-medium" style="font-family: 'Neue Montreal', monospace;">
+    <span id="part-1" class="opacity-0 transition-all duration-1000 font-medium italic">welcome,</span><br>
+    <span id="part-2" class="opacity-0 transition-all duration-1000 font-medium">
+      it's <span class="font-bold">michael</span>.
     </span>
   </h1>
-  <a href="/#about" id="part-3" class="text-center m-auto mt-20 p-0 pl-0 pr-5 font-bold underline underline-offset-8 opacity-0 transition-all duration-500 text-primary-dark text-xl">
+  <button id="part-3" class="text-center m-auto mt-20 p-0 pl-0 pr-5 font-medium underline underline-offset-8 opacity-0 transition-all duration-500 text-primary-dark text-xl bg-transparent border-none cursor-pointer" style="font-family: 'Neue Montreal', monospace;">
     <i class="pr-3 no-underline fa fa-arrow-down animate-bounce"></i> let's meet
-  </a>
+  </button>
 </div>
 <script>
   window.addEventListener('load', function() {
@@ -33,5 +33,11 @@
       h1?.classList.add('opacity-80');
     }, 800);
         
+    document.getElementById('part-3')?.addEventListener('click', function() {
+      const mainContent = document.querySelector('main');
+      if (mainContent) {
+        mainContent.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   });
 </script>
