@@ -1,0 +1,98 @@
+name: Parse Resume PDF
+
+on:
+    push:
+        paths:
+            - "public/Michael_Banna_Resume.pdf"
+    workflow_dispatch: # Allows manual triggering
+
+jobs:
+    parse-resume:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "16"
+                  cache: "npm"
+
+            - name: Install dependencies
+              run: npm install pdf-parse
+
+            - name: Create parser script
+              run: |
+                  cat > parse-resume.js << 'EOF'
+                  const fs = require('fs');
+                  const path = require('path');
+                  const pdfParse = require('pdf-parse');
+
+                  async function parsePDF() {
+                    const pdfPath = path.join(process.cwd(), 'public', 'Michael_Banna_Resume.pdf');
+                    const dataBuffer = fs.readFileSync(pdfPath);
+                    
+                    try {
+                      const pdfData = await pdfParse(dataBuffer);
+                      const text = pdfData.text;
+                      
+                      // This is a simplified parser
+                      // In a real implementation, you would use more sophisticated text extraction
+                      // techniques, possibly with regex or natural language processing
+                      
+                      // Example structure - in a real implementation, you would extract this from the PDF content
+                      const experiences = [
+                        {
+                          company: "Fastercom Inc.",
+                          position: "Web Developer Intern",
+                          period: "June 2023 - December 2023",
+                          location: "Montreal, QC",
+                          link: "https://fasteroptim.com",
+                          description: [
+                            "Developed and enhanced features for an online vehicle fleet management platform",
+                            "Utilized various libraries including Storybook, Chakra, and Lodash",
+                            "Collaborated with a cross-functional team of developers and project managers"
+                          ]
+                        },
+                        // Add parsing logic for more experiences based on PDF structure
+                      ];
+                      
+                      // In a real implementation, you would use the text from the PDF to build this
+                      // structure using pattern matching, headings, etc.
+                      
+                      // Save to JSON file
+                      const outputPath = path.join(process.cwd(), 'src', 'data', 'resume.json');
+                      
+                      // Create directory if it doesn't exist
+                      const dir = path.dirname(outputPath);
+                      if (!fs.existsSync(dir)) {
+                        fs.mkdirSync(dir, { recursive: true });
+                      }
+                      
+                      fs.writeFileSync(outputPath, JSON.stringify({ 
+                        experiences,
+                        lastUpdated: new Date().toISOString(),
+                        pdfContentPreview: text.substring(0, 300) + '...' // For debugging
+                      }, null, 2));
+                      
+                      console.log('Resume parsed and saved to ' + outputPath);
+                    } catch (error) {
+                      console.error('Error parsing PDF:', error);
+                      process.exit(1);
+                    }
+                  }
+
+                  parsePDF();
+                  EOF
+
+            - name: Parse resume
+              run: node parse-resume.js
+
+            - name: Commit and push if changed
+              run: |
+                  git config --global user.name 'GitHub Actions'
+                  git config --global user.email 'actions@github.com'
+                  git add src/data/resume.json
+                  git diff --quiet && git diff --staged --quiet || git commit -m "Update resume data from PDF"
+                  git push

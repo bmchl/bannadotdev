@@ -1,0 +1,42 @@
+{
+    "experiences": [
+        {
+            "company": "Fastercom Inc.",
+            "position": "Web Developer Intern",
+            "period": "June 2023 - December 2023",
+            "location": "Montreal, QC",
+            "link": "https://fasteroptim.com",
+            "description": [
+                "Developed and enhanced features for an online vehicle fleet management and optimization platform using React and TypeScript, significantly improving functionality and user experience.",
+                "Utilized various libraries, including Storybook, Chakra, and Lodash, to optimize development processes and enhance code efficiency, resulting in faster loading times and smoother performance.",
+                "Collaborated closely with a cross-functional team of software developers, project managers, and fellow interns to identify and address challenges, providing innovative solutions to optimize the platform's performance and successfully meet project goals."
+            ]
+        },
+        {
+            "company": "Jean Coutu Pharmacy",
+            "position": "Laboratory Technician",
+            "period": "September 2022 - Present",
+            "location": "Montreal, QC",
+            "link": "https://www.jeancoutu.com/",
+            "description": [
+                "Cooperates with a team of technicians and pharmacists to fulfill prescriptions and ordinances in a fast-paced high-volume environment",
+                "Manages patient files using proprietary software to administer or verify prescription renewals, add insurance benefits and enter other personal information",
+                "Prepares medication including narcotics and controlled substances, and assembles magistral medicine with precision and care"
+            ]
+        },
+        {
+            "company": "Independent",
+            "position": "Freelance Graphic Designer",
+            "period": "March 2020 - August 2022",
+            "location": "Montreal, QC",
+            "link": "https://www.fiverr.com/bnnmchl",
+            "description": [
+                "Managed multiple projects simultaneously in order to meet tight deadlines",
+                "Developed visual identities for physical and online presences depending on clients' needs and preferences",
+                "Delivered consistent quality design assets packaged within easy-to-use branding kits"
+            ]
+        }
+    ],
+    "lastUpdated": "2024-04-18T12:00:00.000Z",
+    "pdfContentPreview": "Michael Banna Resume - Software Developer..."
+}

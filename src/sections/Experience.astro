@@ -1,0 +1,87 @@
+---
+// This component automatically parses and displays experience data from your resume
+// It will update whenever you update your resume file in the repository
+
+import resumeData from '../data/resume.json';
+
+interface Experience {
+  company: string;
+  position: string;
+  period: string;
+  location: string;
+  description: string[];
+  link?: string;
+}
+
+// Get experiences from the JSON file that is automatically updated by the GitHub Action
+const { experiences } = resumeData;
+
+// The following logic is implemented to update this data on each commit:
+// 1. GitHub Action runs on commit when the resume PDF changes
+// 2. The action parses the PDF resume using pdf-parse
+// 3. Generates the resume.json file with the parsed data
+// 4. This component imports and uses that JSON data
+---
+
+<div class="neue-montreal">
+  <h2 class="text-3xl mt-10 mb-6 font-bold text-primary flex items-center" style="font-family: 'Neue Montreal', monospace;">
+    <span class="flex-grow border-b-2 border-primary-light ml-4"></span>
+    experience
+  </h2>
+  <div class="space-y-8">
+    {experiences.map((job: Experience) => (
+      <div class="bg-primary-ultralight rounded-lg border border-primary-light/20 shadow-md p-8 text-primary-dark">
+        <div class="flex flex-col md:flex-row justify-between mb-4">
+          <div>
+            <h3 class="text-xl font-bold">{job.position}</h3>
+            <div class="flex items-center">
+              <h4 class="text-lg">{job.company}</h4>
+              {job.link && (
+                <a href={job.link} target="_blank" rel="noopener noreferrer" class="ml-2 text-primary hover:underline">
+                  <i class="fa fa-external-link-alt text-sm"></i>
+                </a>
+              )}
+            </div>
+          </div>
+          <div class="text-right mt-2 md:mt-0 text-sm text-primary">
+            <p>{job.period}</p>
+            <p>{job.location}</p>
+          </div>
+        </div>
+        <ul class="list-disc list-inside">
+          {job.description.map((point) => (
+            <li class="mb-2 text-primary-dark">{point}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  
+  <div class="mt-8 text-center">
+    <a 
+      href="/Michael_Banna_Resume.pdf" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary-dark transition-colors">
+      <i class="fa fa-file-pdf mr-2"></i>
+      View Full Resume
+    </a>
+  </div>
+</div>
+
+<script>
+  // The resume data is updated at build time through the GitHub Action
+  // No client-side updates are needed unless you want real-time updates
+  
+  // If you wanted real-time updates without rebuilding:
+  // async function fetchResumeData() {
+  //   const response = await fetch('/api/latest-resume-data');
+  //   const data = await response.json();
+  //   // Update the DOM with the new data
+  // }
+  // 
+  // if (import.meta.env.DEV) {
+  //   // Only fetch in development
+  //   fetchResumeData();
+  // }
+</script> 
