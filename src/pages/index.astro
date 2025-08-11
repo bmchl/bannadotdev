@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import About from '../sections/About.astro';
+import WorkExperience from '../sections/WorkExperience.astro';
+import Projects from '../sections/Projects.astro';
 ---
 
 <Layout title="meet michael banna">
@@ -17,6 +19,20 @@ who?
   </h2>
   <About />
 </section>
+
+    <section class="mt-12">
+      <h2 class="text-3xl mt-2 mb-4 font-bold text-primary flex items-center" style="font-family: 'Neue Montreal', monospace;"><span class="flex-grow border-b-2 border-primary-light ml-4"></span>
+        where?
+      </h2>
+      <WorkExperience />
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-3xl mt-2 mb-4 font-bold text-primary flex items-center" style="font-family: 'Neue Montreal', monospace;"><span class="flex-grow border-b-2 border-primary-light ml-4"></span>
+        what?
+      </h2>
+      <Projects />
+    </section>
   </main>
   <footer class="flex flex-col justify-center items-center px-auto md:mx-auto mx-4 text-writing-light opacity-70 py-12 text-center" style="font-family: 'Neue Montreal', monospace;">
     <div class="mb-1">designed & built by <span class="font-bold text-primary">michael banna</span>. ©
