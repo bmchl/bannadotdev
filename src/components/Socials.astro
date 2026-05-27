@@ -1,45 +1,45 @@
-<div class="text-2xl flex flex-row justify-between w-full content-center h-auto ">
-  <a href="https://linkedin.com/in/michael-banna"  data-tooltip-target="tooltip-linkedin" data-tooltip-placement="bottom">
-    <i class="fa fa-linkedin hover:text-writing-dark transition-all p-3"></i></a
-  >
-  <a href="https://github.com/bmchl"  data-tooltip-target="tooltip-github" data-tooltip-placement="bottom">
-    <i class="fa fa-github hover:text-writing-dark transition-all p-3"></i>
-  </a>
-  <a href="https://behance.net/bannamichael" data-tooltip-target="tooltip-behance" data-tooltip-placement="bottom">
-    <i class="fa fa-behance hover:text-writing-dark transition-all p-3"></i>
-  </a>
-  <a href="mailto:michael@banna.dev" data-tooltip-target="tooltip-mail" data-tooltip-placement="bottom" 
->
-    <i class="fa fa-envelope hover:text-writing-dark transition-all p-3"></i>
-</a>
-  <a
-      href="/Michael_Banna_Resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      data-tooltip-target="tooltip-resume"
-      data-tooltip-placement="bottom"
-    >
-        <i class="fa fa-file hover:text-writing-dark transition-all p-3"></i>
-    </a>
-</div>
+---
+const socialLinks = [
+  {
+    href: 'https://linkedin.com/in/michael-banna',
+    label: 'connect with me on linkedin',
+    icon: 'fa-linkedin',
+  },
+  {
+    href: 'https://github.com/bmchl',
+    label: 'browse my github',
+    icon: 'fa-github',
+  },
+  {
+    href: 'mailto:michael@banna.dev',
+    label: 'send me an email',
+    icon: 'fa-envelope',
+  },
+  {
+    href: '/Michael_Banna_Resume.pdf',
+    label: 'download my resume',
+    icon: 'fa-file',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
+];
+---
 
-<div id="tooltip-linkedin" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-writing-dark ransition-opacity duration-300 bg-primary rounded-lg shadow-sm opacity-0 tooltip">
-    connect with me on linkedin
-    <div class="tooltip-arrow" data-popper-arrow></div>
-</div>
-<div id="tooltip-github" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-writing-dark ransition-opacity duration-300 bg-primary rounded-lg shadow-sm opacity-0 tooltip">
-    browse my github
-    <div class="tooltip-arrow" data-popper-arrow></div>
-</div>
-<div id="tooltip-behance" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-writing-dark ransition-opacity duration-300 bg-primary rounded-lg shadow-sm opacity-0 tooltip">
-    view my behance
-    <div class="tooltip-arrow" data-popper-arrow></div>
-</div>
-<div id="tooltip-mail" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-writing-dark ransition-opacity duration-300 bg-primary rounded-lg shadow-sm opacity-0 tooltip">
-    send me an email
-    <div class="tooltip-arrow" data-popper-arrow></div>
-</div>
-<div id="tooltip-resume" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-writing-dark ransition-opacity duration-300 bg-primary rounded-lg shadow-sm opacity-0 tooltip">
-    download my resume
-    <div class="tooltip-arrow" data-popper-arrow></div>
+<div class="flex h-auto w-full flex-row justify-between content-center text-2xl">
+  {
+    socialLinks.map(({ href, label, icon, target, rel }) => (
+      <a
+        href={href}
+        target={target}
+        rel={rel}
+        aria-label={label}
+        class="group relative inline-flex items-center justify-center"
+      >
+        <i class={`fa ${icon} p-3 transition-all hover:text-primary`}></i>
+        <span class="pointer-events-none absolute left-1/2 top-full z-20 mt-3 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded-full bg-primary-dark px-3 py-1.5 text-xs font-medium text-writing-dark opacity-0 shadow-lg shadow-primary-dark/10 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+          {label}
+        </span>
+      </a>
+    ))
+  }
 </div>

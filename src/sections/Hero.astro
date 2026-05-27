@@ -1,40 +1,96 @@
 ---
-
+import Socials from '../components/Socials.astro';
 ---
-<div class="flex flex-col items-center justify-center h-screen text-primary-dark w-full content-center">
-  <h1 id="hero-title" class="relative text-4xl md:text-7xl z-10 m-auto mb-0 leading-tight font-medium" style="font-family: 'Neue Montreal', monospace;">
-    <span id="part-1" class="opacity-0 transition-all duration-1000 font-medium italic">welcome,</span><br>
-    <span id="part-2" class="opacity-0 transition-all duration-1000 font-medium">
-      it's <span class="font-bold">michael</span>.
-    </span>
-  </h1>
-  <button id="part-3" class="text-center m-auto mt-20 p-0 pl-0 pr-5 font-medium underline underline-offset-8 opacity-0 transition-all duration-500 text-primary-dark text-xl bg-transparent border-none cursor-pointer" style="font-family: 'Neue Montreal', monospace;">
-    <i class="pr-3 no-underline fa fa-arrow-down animate-bounce"></i> let's meet
-  </button>
+<div class="flex min-h-screen flex-col items-center justify-center px-6 pb-12 pt-24 md:pt-28 text-primary-dark w-full content-center">
+  <div class="max-w-4xl text-center">
+    <div id="part-0" class="opacity-0 transition-all duration-1000 mb-6 flex justify-center">
+      <div class="w-fit rounded-full border px-4 py-3 text-primary-dark shadow-lg backdrop-blur-lg" style="background-color: rgba(237, 243, 248, 0.58); border-color: rgba(255, 255, 255, 0.35);">
+        <Socials />
+      </div>
+    </div>
+    <p id="part-1" class="opacity-0 transition-all duration-1000 text-sm md:text-base uppercase tracking-[0.35em] text-primary-dark/70 mb-5">
+      Montreal • Apple Platforms
+    </p>
+    <h1 id="hero-title" class="relative text-5xl md:text-6xl lg:text-7xl z-10 m-auto mb-0 leading-[0.95] font-medium tracking-[-0.04em]" style="font-family: 'Neue Montreal', monospace;">
+      <span id="part-2" class="opacity-0 transition-all duration-1000 block">
+        michael <span class="font-bold italic">banna</span>
+      </span>
+      <span id="part-3" class="opacity-0 transition-all duration-1000 block text-primary-dark mt-3 md:mt-4">
+        iOS & iPadOS developer.
+      </span>
+    </h1>
+    <p id="part-4" class="opacity-0 transition-all duration-1000 mx-auto mt-8 max-w-2xl text-base md:text-lg leading-7 text-primary-dark/78">
+      Focused on native-feeling product experiences, interaction quality, and thoughtful UI for Apple platforms.
+    </p>
+    <div id="part-5" class="opacity-0 transition-all duration-1000 mt-6 flex flex-wrap items-center justify-center gap-3">
+      <a
+        href="https://www.lightspeedhq.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 rounded-full border px-5 py-2 text-sm font-normal text-primary-dark shadow-lg backdrop-blur-lg transition-all hover:-translate-y-0.5"
+        style="background-color: rgba(237, 243, 248, 0.58); border-color: rgba(255, 255, 255, 0.35);"
+      >
+        <span class="inline-flex items-center gap-1">
+          <span>Currently at</span>
+          <span class="font-medium">Lightspeed</span>
+        </span>
+        <img
+          src="/media/lightspeed-chip.webp"
+          alt="Lightspeed logo"
+          class="h-7 w-7 object-contain"
+        />
+      </a>
+      <a
+        href="https://barricade.banna.dev/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 rounded-full border px-5 py-2 text-sm font-normal text-primary-dark shadow-lg backdrop-blur-lg transition-all hover:-translate-y-0.5"
+        style="background-color: rgba(237, 243, 248, 0.58); border-color: rgba(255, 255, 255, 0.35);"
+      >
+        <span class="inline-flex items-center gap-1">
+          <span>Building</span>
+          <span class="font-medium">Barricade</span>
+        </span>
+        <img
+          src="/media/barricade-chip.webp"
+          alt="Barricade icon"
+          class="h-7 w-7 object-contain"
+        />
+      </a>
+    </div>
+  </div>
 </div>
 <script>
   window.addEventListener('load', function() {
     setTimeout(() =>{
+      const h1 = document.getElementById('part-0');
+      h1?.classList.remove('opacity-0');
+      h1?.classList.add('opacity-100');
+    }, 100);
+    setTimeout(() =>{
       const h1 = document.getElementById('part-1');
       h1?.classList.remove('opacity-0');
-      h1?.classList.add('opacity-80');
-    }, 100);
-        setTimeout(() =>{
+      h1?.classList.add('opacity-100');
+    }, 250);
+    setTimeout(() =>{
       const h1 = document.getElementById('part-2');
       h1?.classList.remove('opacity-0');
-      h1?.classList.add('opacity-80');
-    }, 400);
+      h1?.classList.add('opacity-100');
+    }, 500);
     setTimeout(() =>{
       const h1 = document.getElementById('part-3');
       h1?.classList.remove('opacity-0');
-      h1?.classList.add('opacity-80');
-    }, 800);
-        
-    document.getElementById('part-3')?.addEventListener('click', function() {
-      const mainContent = document.querySelector('main');
-      if (mainContent) {
-        mainContent.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+      h1?.classList.add('opacity-100');
+    }, 850);
+    setTimeout(() =>{
+      const h1 = document.getElementById('part-4');
+      h1?.classList.remove('opacity-0');
+      h1?.classList.add('opacity-100');
+    }, 1100);
+    setTimeout(() =>{
+      const h1 = document.getElementById('part-5');
+      h1?.classList.remove('opacity-0');
+      h1?.classList.add('opacity-100');
+    }, 1350);
   });
 </script>

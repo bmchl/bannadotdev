@@ -1,7 +1,4 @@
 ---
-import Header from '../components/Header.astro';
-import MobileHeader from '../components/MobileHeader.astro';
-import CompactHeader from '../components/CompactHeader.astro';
 import Hero from '../sections/Hero.astro';
 import '../fonts.css';
 export interface Props {
@@ -15,27 +12,20 @@ const { title } = Astro.props;
 <html lang="en" class="bg-writing-dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta
+      name="description"
+      content="Michael Banna is an Apple platform developer focused on building polished iOS and iPadOS products with SwiftUI, strong interaction design, and durable production UX."
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script
       src="https://kit.fontawesome.com/335df166b2.js"
       crossorigin="anonymous"></script>
-      <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body class="w-full neue-montreal">
     <Hero />
-    <div class="invisible lg:visible">
-      <Header />
-    </div>
-    <div class="invisible md:visible lg:invisible">
-      <CompactHeader />
-    </div>
-    <div class="visible md:invisible">
-      <MobileHeader/>
-    </div>
     <slot />
   </body>
 </html>
@@ -99,17 +89,17 @@ const { title } = Astro.props;
   }
 
   :root {
-    --accent: 124, 58, 237;
+    --accent: 86, 105, 129;
     --accent-gradient: linear-gradient(
       45deg,
       rgb(var(--accent)),
-      #da62c4 30%,
+      #72a0c1 30%,
       white 60%
     );
   }
   html {
     font-family: 'Neue Montreal', system-ui, sans-serif;
-    background-color: #f6f6f6;
+    background-color: #f3f7fa;
     scroll-behavior: smooth;
   }
   body {
